@@ -22,22 +22,27 @@ jobs:
           python3 - <<'PY'
           import hashlib, pathlib, re, urllib.request
 
-          ZRODLO = "https://domyboduszyn.pl"
+          # pobieramy wprost z serwera, bo Cloudflare przed domena odrzuca automaty (403)
+          ZRODLO = "https://valmo-boduszyn.netlify.app"
+          DOMENA = "https://domyboduszyn.pl"
           RAW = "https://raw.githubusercontent.com/agatawiktoriaolejniczak-jpg/valmo-dane-ceny/main"
           dane = pathlib.Path("dane"); dane.mkdir(exist_ok=True)
 
           def pobierz(adres):
-              with urllib.request.urlopen(adres, timeout=60) as r:
+              zadanie = urllib.request.Request(adres, headers={
+                  "User-Agent": "valmo-dane-ceny/1.0 (kopia danych dla dane.gov.pl)"
+              })
+              with urllib.request.urlopen(zadanie, timeout=60) as r:
                   return r.read()
 
           xml = pobierz(f"{ZRODLO}/dane/dane-gov-pl.xml").decode("utf-8")
 
           # adresy plikow dziennych musza wskazywac na ta kopie, inaczej portal
           # pobieralby CSV z serwera, ktory byl dla niego nieosiagalny
-          pliki = re.findall(r"https://domyboduszyn\.pl/dane/([^<]+\.csv)", xml)
+          pliki = re.findall(rf"{re.escape(DOMENA)}/dane/([^<]+\.csv)", xml)
           for nazwa in pliki:
               (dane / nazwa).write_bytes(pobierz(f"{ZRODLO}/dane/{nazwa}"))
-          xml = xml.replace(f"{ZRODLO}/dane/", f"{RAW}/dane/")
+          xml = xml.replace(f"{DOMENA}/dane/", f"{RAW}/dane/")
 
           pathlib.Path("dane-gov-pl.xml").write_text(xml, encoding="utf-8")
           suma = hashlib.md5(xml.encode("utf-8")).hexdigest()
