@@ -2,7 +2,10 @@ name: Kopia danych o cenach dla dane.gov.pl
 
 on:
   schedule:
-    - cron: "45 3 * * *"   # po nocnej generacji danych na stronie (03:15 UTC)
+    # strona generuje dane z opoznieniem GitHuba, realnie 9-10 UTC,
+    # wiec kopiujemy dwa razy: w poludnie i wieczorem, zeby nie przegapic dnia
+    - cron: "0 12 * * *"
+    - cron: "0 18 * * *"
   workflow_dispatch:
 
 permissions:
