@@ -12,8 +12,8 @@ w portalu dane.gov.pl.
 
 ## Adresy do importu
 
-- plik XML: `https://raw.githubusercontent.com/agatawiktoriaolejniczak-jpg/valmo-dane-ceny/main/dane-gov-pl.xml`
-- suma kontrolna: `https://raw.githubusercontent.com/agatawiktoriaolejniczak-jpg/valmo-dane-ceny/main/dane-gov-pl.md5`
+- plik XML: `https://agatawiktoriaolejniczak-jpg.github.io/valmo-dane-ceny/dane-gov-pl.xml`
+- suma kontrolna: `https://agatawiktoriaolejniczak-jpg.github.io/valmo-dane-ceny/dane-gov-pl.md5`
 
 Dane aktualizują się automatycznie raz na dobę. Każdy dzień to osobny plik CSV
 w katalogu `dane/`.

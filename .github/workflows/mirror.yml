@@ -25,7 +25,9 @@ jobs:
           # pobieramy wprost z serwera, bo Cloudflare przed domena odrzuca automaty (403)
           ZRODLO = "https://valmo-boduszyn.netlify.app"
           DOMENA = "https://domyboduszyn.pl"
-          RAW = "https://raw.githubusercontent.com/agatawiktoriaolejniczak-jpg/valmo-dane-ceny/main"
+          # GitHub Pages, bo podaje naglowek Content-Type: application/xml,
+          # ktorego wymaga walidator dane.gov.pl (raw.githubusercontent dawal text/plain)
+          RAW = "https://agatawiktoriaolejniczak-jpg.github.io/valmo-dane-ceny"
           dane = pathlib.Path("dane"); dane.mkdir(exist_ok=True)
 
           def pobierz(adres):
