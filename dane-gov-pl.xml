@@ -569,6 +569,28 @@
 				<hasResearchData>false</hasResearchData>
 				<containsProtectedData>false</containsProtectedData>
 			</resource>
+			<resource status="published">
+				<extIdent>valmo_boduszyn_ceny_dzienna_20261009</extIdent>
+				<url>https://agatawiktoriaolejniczak-jpg.github.io/valmo-dane-ceny/dane/ceny-ofertowe-mieszkan-dewelopera-valmo-boduszyn-2026-10-09.csv</url>
+				<title>
+					<polish>Ceny ofertowe mieszkań dewelopera VALMO sp. z o.o. 2026-10-09</polish>
+					<english>Offer prices for developer's apartments VALMO sp. z o.o. 2026-10-09</english>
+				</title>
+				<description>
+					<polish>Dane dotyczące cen ofertowych mieszkań dewelopera VALMO sp. z o.o. udostępnione 2026-10-09 zgodnie z art. 19b. ust. 1 Ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym (Dz. U. z 2024 r. poz. 695).</polish>
+					<english>Data on offer prices of apartments of the developer VALMO sp. z o.o. made available 2026-10-09 in accordance with art. 19b. ust. 1 Ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym (Dz. U. z 2024 r. poz. 695).</english>
+				</description>
+				<availability>local</availability>
+				<dataDate>2026-10-09</dataDate>
+				<specialSigns>
+					<specialSign>X</specialSign>
+				</specialSigns>
+				<hasDynamicData>false</hasDynamicData>
+				<hasHighValueData>true</hasHighValueData>
+				<hasHighValueDataFromEuropeanCommissionList>false</hasHighValueDataFromEuropeanCommissionList>
+				<hasResearchData>false</hasResearchData>
+				<containsProtectedData>false</containsProtectedData>
+			</resource>
 		</resources>
 		<tags>
 			<tag lang="pl">Deweloper</tag>
